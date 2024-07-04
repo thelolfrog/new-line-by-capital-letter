@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Paste a chunk of string: ");
+        string input = Console.ReadLine();
+
+        StringBuilder result = new StringBuilder();
+
+        foreach (char c in input)
+        {
+            if (char.IsUpper(c))
+            {
+                result.Append("\n");
+            }
+            result.Append(c);
+        }
+
+        Console.WriteLine(result.ToString());
+    }
+}
+
+
