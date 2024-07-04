@@ -1,25 +1,16 @@
 using System;
+using System.Text.RegularExpressions;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.Write("Paste a chunk of string: ");
+        Console.Write("Enter a chunk of words: ");
         string input = Console.ReadLine();
 
-        StringBuilder result = new StringBuilder();
+        string formattedInput = Regex.Replace(input, "([A-Z])", Environment.NewLine + "$1");
 
-        foreach (char c in input)
-        {
-            if (char.IsUpper(c))
-            {
-                result.Append("\n");
-            }
-            result.Append(c);
-        }
-
-        Console.WriteLine(result.ToString());
+        Console.WriteLine(formattedInput);
     }
 }
-
 
